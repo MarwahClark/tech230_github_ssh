@@ -71,6 +71,8 @@ Vagrant.configure("2") do |config|
 ### reverse proxy
 - once you have your nginx and app running, run the code `sudo nano /etc/nginx/sites-available/default` to set up a file for nginx configuration.
 - once you hvae entered the server, scroll down to the location block and change the local host to `3000` instead of `8080`
+
+
 `    location / {`
 `        proxy_pass http://localhost:3000;`
   `      proxy_http_version 1.1;`
@@ -81,6 +83,11 @@ Vagrant.configure("2") do |config|
     `}`
 `}`
 
-- this allows the server to respont to the request at the root.once done save and exit using `control x, y and enter`
+- this allows the server to respond to the request at the root,once done save and exit using `control x, y and enter`
+-
 -to ensure you dont have any syntax errors run the code `sudo nginx -t`
--making sure your `node app.js` is running run the code `sudo systemctl restart nginx` and test out your servers URL. it should take you to the right page.
+
+-making sure your `node app.js` is running run the code 
+
+### relstart nginx
+- using the code `sudo systemctl restart nginx` restart your nignx and test out your servers URL. it should take you to the right page.
