@@ -72,19 +72,11 @@ Vagrant.configure("2") do |config|
 - once you have your nginx and app running, run the code `sudo nano /etc/nginx/sites-available/default` to set up a file for nginx configuration.
 - once you hvae entered the server, scroll down to the location block and change the local host to `3000` instead of `8080`
 
+![image](https://github.com/MarwahClark/tech230_github_ssh/assets/133018482/319ee34d-d66c-4642-8fda-bd74e1cf19db)
 
-`    location / {`
-`        proxy_pass http://localhost:3000;`
-  `      proxy_http_version 1.1;`
- `       proxy_set_header Upgrade $http_upgrade;`
-  `      proxy_set_header Connection 'upgrade';`
-   `     proxy_set_header Host $host;`
-    `    proxy_cache_bypass $http_upgrade;`
-    `}`
-`}`
 
 - this allows the server to respond to the request at the root,once done save and exit using `control x, y and enter`
--
+
 -to ensure you dont have any syntax errors run the code `sudo nginx -t`
 
 -making sure your `node app.js` is running run the code 
